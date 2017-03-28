@@ -1,14 +1,66 @@
-@import 'utility';
-
-$base-text-size: 16px;
-$base-font-family: sans-serif;
-
 html {
   text-size-adjust: 100%;
+  height: 100%;
 }
+$border-radius: 8px;
+$bodymargin: 0;
+$bodyfont: 16px / 1 sans-serif;
+$bodymin: 100%;
+$pagedisplay: flex;
+$pagejustify: center;
+$pagealign: center;
+$pageflexflow: column;
+$pickerwidth: 600px;
+$pickerpadding: 16px;
+$pickerbackground: #c0c6d1;
+$boxmargin: auto;
+$boxhw: 100px;
+$boxborder: 4px solid black;
+$boxradius: 5px;
+$textmargin: 1em;
+$textbackground: #777a7f;
+$textpadding: 8px;
+$textcolor: white;
+$boxfont: 15px arial, sans-serif;
+
 
 body {
-  @include font-smoothing(on);
-  margin: 0;
-  font: $base-text-size / 1 $base-font-family;
+  margin: $bodymargin;
+  font: $bodyfont;
+  min-height: $bodymin;
+  display: $pagedisplay;
+  justify-content: $pagejustify;
+  align-items: $pagealign;
+  flex-flow: $pageflexflow;
+}
+.colorpicker {
+  border-radius: $border-radius;
+  width: $pickerwidth;
+  padding: $pickerpadding;
+  background-color: $pickerbackground;
+  display: $pagedisplay;
+  justify-content: $pagejustify;
+  flex-flow: $pageflexflow;
+  align-items: $pagealign;
+
+  .box {
+    margin-left: $boxmargin;
+    margin-right: $boxmargin;
+    background-image: url(https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcS376kPLUudOpZecm_5kMMW89Kljcz6Qaf9F5JQo0vZI4xlQiSpew);
+    font: $boxfont;
+
+    .boxdisplay {
+      width: $boxhw;
+      height: $boxhw;
+      border: $boxborder;
+      border-radius: $boxradius;
+    }
+  }
+}
+
+.text {
+  margin: $textmargin;
+  background-color: $textbackground;
+  padding: $textpadding;
+  color: $textcolor;
 }
